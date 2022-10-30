@@ -53,7 +53,7 @@
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from 'firebase/app';
-    import { getMessaging } from "firebase/messaging";
+    import { getMessaging } from "firebase/messaging/sw";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -86,7 +86,7 @@
           //  ...
         });
     }
-    var serviceWorkerVersion = '3118421815';
+    var serviceWorkerVersion = '2271365117';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
