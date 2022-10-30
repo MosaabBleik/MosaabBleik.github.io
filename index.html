@@ -72,21 +72,7 @@
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-        // Service workers are supported. Use them.
-        window.addEventListener('load', function () {
-          // ADD THIS LINE
-          navigator.serviceWorker.register('/firebase-messaging-sw.js');
-
-          // Wait for registration to finish before dropping the <script> tag.
-          // Otherwise, the browser will load the script multiple times,
-          // potentially different versions.
-          var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
-
-          //  ...
-        });
-    }
-    var serviceWorkerVersion = '2167587872';
+    var serviceWorkerVersion = '2223051705';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -105,6 +91,8 @@
         // Wait for registration to finish before dropping the <script> tag.
         // Otherwise, the browser will load the script multiple times,
         // potentially different versions.
+        navigator.serviceWorker.register('/firebase-messaging-sw.js');
+        navigator.serviceWorker.register("/flutter_service_worker.js");
         var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
         navigator.serviceWorker.register(serviceWorkerUrl)
           .then((reg) => {
